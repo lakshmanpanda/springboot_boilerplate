@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS t_organization (
 
 -- Grant privileges to the specified user
 -- Replace 'root' and 'psg@123' with your actual username and password
-GRANT ALL PRIVILEGES ON sb_boilerplate.* TO 'root'@'localhost' IDENTIFIED BY 'psg@123';
-
--- Apply the privileges
-FLUSH PRIVILEGES;
+# GRANT ALL PRIVILEGES ON sb_boilerplate.* TO 'root'@'localhost' IDENTIFIED BY 'psg@123';
+#
+# -- Apply the privileges
+# FLUSH PRIVILEGES;
