@@ -6,10 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
-
-import java.sql.Timestamp;
 
 @Setter
 @Getter
@@ -31,13 +27,5 @@ public class Organization {
 
     @Column(name = "description")
     private String description;
-
-    @CreationTimestamp
-    @Column(name = "created_at", nullable = false, updatable = false, insertable = false)
-    private Timestamp createdAt;
-
-    @UpdateTimestamp
-    @Column(name = "updated_at", nullable = false, insertable = false)
-    private Timestamp updatedAt;
 }
 

@@ -11,9 +11,7 @@ public class OrganizationMapper {
         return new OrganizationDTO(
                 organization.getId(),
                 organization.getName(),
-                organization.getDescription(),
-                organization.getCreatedAt(),
-                organization.getUpdatedAt()
+                organization.getDescription()
         );
     }
 }

@@ -13,6 +13,4 @@ public class OrganizationDTO {
     private Integer id;
     private String name;
     private String description;
-    private Timestamp createdAt;
-    private Timestamp updatedAt;
 }
