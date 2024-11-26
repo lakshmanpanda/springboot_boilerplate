@@ -8,3 +8,4 @@ INSERT INTO t_organization (name, description) VALUES ('NextGen Energy', 'Renewa
 INSERT INTO t_organization (name, description) VALUES ('AquaSave', 'Water conservation and management.');
 INSERT INTO t_organization (name, description) VALUES ('Urban Planners', 'Smart city development and urban planning.');
 INSERT INTO t_organization (name, description) VALUES ('FitLife', 'Fitness and lifestyle improvement services.');
+
