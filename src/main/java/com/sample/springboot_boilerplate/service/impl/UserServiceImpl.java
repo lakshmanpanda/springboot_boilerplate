@@ -22,14 +22,16 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO login(String email, String password) {
+        // Check if user exists by email
         User user = userRepository.findByMailId(email)
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
 
+        // Check if the password matches
         if (!user.getPassword().equals(password)) {
             throw new InvalidCredentialsException("Invalid credentials");
         }
 
+        // Return user DTO if credentials are valid
         return userMapper.mapToDto(user);
     }
-
 }

@@ -22,16 +22,22 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public ResponseEntity<UserDTO> login(@RequestParam("email") String email, @RequestParam("password") String password) {
+    public ResponseEntity<?> login(@RequestParam("email") String email, @RequestParam("password") String password) {
         try {
             UserDTO userDTO = userService.login(email, password);
             return ResponseEntity.ok(userDTO); // 200 OK
         } catch (ResourceNotFoundException e) {
-            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND); // 404 Not Found
+            // Return 404 with error message
+            return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                    .body("User not found with email: " + email);
         } catch (InvalidCredentialsException e) {
-            return new ResponseEntity<>(null, HttpStatus.UNAUTHORIZED); // 401 Unauthorized
+            // Return 401 with error message
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body("Invalid credentials provided");
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR); // 500 Internal Server Error
+            // Return 500 with generic error message
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Internal server error");
         }
     }
 }
