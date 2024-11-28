@@ -4,13 +4,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Timestamp;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class OrganizationDTO {
-    private Integer id;
-    private String name;
-    private String description;
+public class BatchDTO {
+    private Integer batchId;
+    private String batchName;
+    private String batchDesc;
+    private String batchStatus;
 }
