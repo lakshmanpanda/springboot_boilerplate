@@ -2,6 +2,7 @@ package com.sample.springboot_boilerplate.service.impl;
 
 import com.sample.springboot_boilerplate.dto.UserDTO;
 import com.sample.springboot_boilerplate.entity.User;
+import com.sample.springboot_boilerplate.exception.InvalidCredentialsException;
 import com.sample.springboot_boilerplate.exception.ResourceNotFoundException;
 import com.sample.springboot_boilerplate.mapper.UserMapper;
 import com.sample.springboot_boilerplate.repository.UserRepository;
@@ -25,9 +26,10 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new ResourceNotFoundException("User not found with email: " + email));
 
         if (!user.getPassword().equals(password)) {
-            throw new IllegalArgumentException("Invalid credentials");
+            throw new InvalidCredentialsException("Invalid credentials");
         }
 
         return userMapper.mapToDto(user);
     }
+
 }
