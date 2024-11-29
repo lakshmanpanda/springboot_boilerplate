@@ -70,6 +70,25 @@ INSERT INTO Users (user_name, rollno, mail_id, pass,user_status,created_date,use
     ('Arjun','22pt01', '22pt01@psgtech.ac.in', 'Arjunpass','active','2024-01-01','student');
 
 
+INSERT INTO Goals (goal_title, goal_desc, assigned_to, created_by, goal_start_date, goal_end_date, goal_created_date, goal_updated_date, goal_type, goal_status, goal_priority, goal_ref)
+VALUES ('Increase Sales', 'Increase quarterly sales by 10%', 1, 1, '2024-01-01', '2024-04-01', '2023-12-15', '2023-12-15', 'Revenue', 'In Progress', 3, 'SALES-Q1-2024');
+
+INSERT INTO Users (user_name, rollno, mail_id, pass, user_status, created_date, user_role)
+VALUES
+    ('Ravi', '22pt02', '22pt02@psgtech.ac.in', 'Ravipass', 'active', '2024-01-01', 'student'),
+    ('Sita', '22pt03', '22pt03@psgtech.ac.in', 'Sitapass', 'active', '2024-01-01', 'student'),
+    ('Amit', '22pt04', '22pt04@psgtech.ac.in', 'Amitpass', 'active', '2024-01-01', 'student'),
+    ('Lata', '22pt05', '22pt05@psgtech.ac.in', 'Latapass', 'active', '2024-01-01', 'student');
+
+
+INSERT INTO Goals (goal_title, goal_desc, assigned_to, created_by, goal_start_date, goal_end_date, goal_created_date, goal_updated_date, goal_type, goal_status, goal_priority, goal_ref)
+VALUES
+    ('Complete Research Paper', 'Complete the research paper on AI and its applications', 1, 1, '2024-02-01', '2024-06-01', '2024-01-01', '2024-01-01', 'Academic', 'In Progress', 1, 'REF001'),
+    ('Finish Online Course', 'Complete the online course on Data Science and Machine Learning', 2, 2, '2024-02-15', '2024-05-15', '2024-01-10', '2024-01-10', 'Learning', 'Not Started', 2, 'REF002'),
+    ('Internship Application', 'Apply for internships in software engineering by March', 3, 3, '2024-01-15', '2024-03-15', '2024-01-01', '2024-01-01', 'Career Development', 'Not Started', 3, 'REF003'),
+    ('Finish Group Project', 'Complete the final group project for the course on Cloud Computing', 4, 4, '2024-03-01', '2024-04-01', '2024-02-01', '2024-02-01', 'Academic', 'In Progress', 1, 'REF004'),
+    ('Web Dev Portfolio', 'web development portfolio website', 5, 5, '2024-02-01', '2024-05-30', '2024-01-15', '2024-01-15', 'Personal Development', 'Not Started', 2, 'REF005');
+
 
 
 
