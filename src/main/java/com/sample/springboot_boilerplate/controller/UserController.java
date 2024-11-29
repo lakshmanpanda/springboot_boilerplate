@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin("*")
 public class UserController {
 
     private final UserService userService;
@@ -46,7 +45,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/Dashboard/{id}")
+    @GetMapping("/dashboard")
     public ResponseEntity<List<GoalsDTO>> getGoal(@RequestParam("id") Integer id) {
         List<GoalsDTO> goals = userService.getGoal(id);
         return ResponseEntity.ok(goals);
