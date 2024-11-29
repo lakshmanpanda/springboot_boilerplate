@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Setter
 @Getter
@@ -37,7 +38,7 @@ public class User {
     private String userStatus;
 
     @Column(name = "created_date", nullable = false)
-    private LocalDate createdDate;
+    private Date createdDate;
 
     @Column(name = "user_role", nullable = false, length = 255)
     private String userRole;

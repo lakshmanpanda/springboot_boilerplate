@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Setter
 @Getter
@@ -36,16 +37,16 @@ public class Goal {
     private User createdBy;
 
     @Column(name = "goal_start_date", nullable = false)
-    private LocalDate goalStartDate;
+    private Date goalStartDate;
 
     @Column(name = "goal_end_date", nullable = false)
-    private LocalDate goalEndDate;
+    private Date goalEndDate;
 
     @Column(name = "goal_created_date", nullable = false)
-    private LocalDate goalCreatedDate;
+    private Date goalCreatedDate;
 
     @Column(name = "goal_updated_date", nullable = false)
-    private LocalDate goalUpdatedDate;
+    private Date goalUpdatedDate;
 
     @Column(name = "goal_type", nullable = false, length = 255)
     private String goalType;

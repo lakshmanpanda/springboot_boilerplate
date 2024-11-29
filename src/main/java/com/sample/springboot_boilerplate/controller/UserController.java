@@ -28,7 +28,7 @@ public class UserController {
     public ResponseEntity<?> login(@RequestParam("email") String email, @RequestParam("password") String password) {
         try {
             UserDTO userDTO = userService.login(email, password);
-            userDTO.getId()
+//            userDTO.getId()
             return ResponseEntity.ok(userDTO); // 200 OK
         } catch (ResourceNotFoundException e) {
             // Return 404 with error message
@@ -47,21 +47,7 @@ public class UserController {
 
     @GetMapping("/Dashboard/{id}")
     public ResponseEntity<List<GoalsDTO>> getGoal(@RequestParam("id") Integer id) {
-        try {
-            List<GoalsDTO> goals = userService.getGoal(id);
-            return ResponseEntity.ok(goals); // 200 OK
-        } catch (ResourceNotFoundException e) {
-            // Return 404 with error message
-            return ResponseEntity.status(HttpStatus.NOT_FOUND)
-                    .body("User not found with id: " + id);
-        } catch (InvalidCredentialsException e) {
-            // Return 401 with error message
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
-                    .body("Invalid credentials provided");
-        } catch (Exception e) {
-            // Return 500 with generic error message
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Internal server error");
-        }
+        List<GoalsDTO> goals = userService.getGoal(id);
+        return ResponseEntity.ok(goals);
     }
 }

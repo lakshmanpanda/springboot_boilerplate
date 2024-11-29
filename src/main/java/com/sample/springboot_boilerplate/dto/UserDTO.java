@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -16,6 +17,6 @@ public class UserDTO {
     private String rollNo;
     private String mailId;
     private String userStatus;
-    private LocalDate createdDate;
+    private Date createdDate;
     private String userRole;
 }
