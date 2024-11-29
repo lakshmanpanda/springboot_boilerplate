@@ -1,6 +1,7 @@
 package com.sample.springboot_boilerplate.controller;
 
 import com.sample.springboot_boilerplate.dto.GoalsDTO;
+import com.sample.springboot_boilerplate.dto.TasksDTO;
 import com.sample.springboot_boilerplate.dto.UserDTO;
 import com.sample.springboot_boilerplate.exception.InvalidCredentialsException;
 import com.sample.springboot_boilerplate.exception.ResourceNotFoundException;
@@ -49,5 +50,11 @@ public class UserController {
     public ResponseEntity<List<GoalsDTO>> getGoal(@RequestParam("id") Integer id) {
         List<GoalsDTO> goals = userService.getGoal(id);
         return ResponseEntity.ok(goals);
+    }
+
+    @GetMapping("/Dashboard/{id}/{gid}")
+    public ResponseEntity<List<TasksDTO>> getTaskList(@RequestParam("id") Integer id, @RequestParam("gid") Integer gid) {
+        List<TasksDTO> tasks = userService.getTaskList(id,gid);
+        return ResponseEntity.ok(tasks);
     }
 }

@@ -21,4 +21,12 @@ public class UserHandler {
         Query nativeQuery = entityManager.createNativeQuery(query.toString());
         return nativeQuery.setParameter("id", id).getResultList();
     }
+
+    public List<Object[]> getTaskList(Integer id, Integer gid) {
+        StringBuilder query = new StringBuilder();
+        query.append("select * from tasks where gid = :id ");
+
+        Query nativeQuery = entityManager.createNativeQuery(query.toString());
+        return nativeQuery.setParameter("id", id).getResultList();
+    }
 }

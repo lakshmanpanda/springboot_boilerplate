@@ -2,6 +2,7 @@ package com.sample.springboot_boilerplate.service.impl;
 
 import com.sample.springboot_boilerplate.db.UserHandler;
 import com.sample.springboot_boilerplate.dto.GoalsDTO;
+import com.sample.springboot_boilerplate.dto.TasksDTO;
 import com.sample.springboot_boilerplate.dto.UserDTO;
 import com.sample.springboot_boilerplate.entity.User;
 import com.sample.springboot_boilerplate.exception.InvalidCredentialsException;
@@ -71,4 +72,31 @@ public class UserServiceImpl implements UserService {
 
         return goals_list;
     }
+
+    @Override
+    public List<TasksDTO> getTaskList(Integer id, Integer gid) {
+        List<Object[]> tasks = userHandler.getTaskList(id, gid);
+        List<TasksDTO> taskList = new ArrayList<>();
+
+        for (Object[] task : tasks) {
+            TasksDTO dto = new TasksDTO();
+            dto.setTid(Integer.parseInt(Objects.toString(task[0])));
+            dto.setTaskTitle((String) task[1]);
+            dto.setCreatedBy(Integer.parseInt(Objects.toString(task[2])));
+            dto.setAssignedTo(Integer.parseInt(Objects.toString(task[3])));
+            dto.setTaskStartDate((Date) task[4]);
+            dto.setTaskEndDate((Date) task[5]);
+            dto.setTaskCreatedDate((Date) task[6]);
+            dto.setTaskUpdatedDate((Date) task[7]);
+            dto.setTaskStatus((String) task[8]);
+            dto.setTaskDesc((String) task[9]);
+            dto.setTaskPriority(Integer.parseInt(Objects.toString(task[10])));
+            dto.setTaskRef((String) task[11]);
+            dto.setGid(task[12] != null ? Integer.parseInt(Objects.toString(task[12])) : null);
+            taskList.add(dto);
+        }
+
+        return taskList;
+    }
+
 }
