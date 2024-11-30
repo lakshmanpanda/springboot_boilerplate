@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Setter
 @Getter
@@ -15,7 +14,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Entity
 @Table(name = "goals")
-public class Goal {
+public class Goals {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,16 +36,16 @@ public class Goal {
     private User createdBy;
 
     @Column(name = "goal_start_date", nullable = false)
-    private Date goalStartDate;
+    private LocalDate goalStartDate;
 
     @Column(name = "goal_end_date", nullable = false)
-    private Date goalEndDate;
+    private LocalDate goalEndDate;
 
     @Column(name = "goal_created_date", nullable = false)
-    private Date goalCreatedDate;
+    private LocalDate goalCreatedDate;
 
     @Column(name = "goal_updated_date", nullable = false)
-    private Date goalUpdatedDate;
+    private LocalDate goalUpdatedDate;
 
     @Column(name = "goal_type", nullable = false, length = 255)
     private String goalType;

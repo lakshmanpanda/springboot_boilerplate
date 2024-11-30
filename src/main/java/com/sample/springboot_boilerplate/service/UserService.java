@@ -9,7 +9,15 @@ import java.util.List;
 public interface UserService {
     UserDTO login(String email, String password);
 
-    List<GoalsDTO> getGoal(Integer id);
+    List<GoalsDTO> getAllGoals(Integer id);
 
-    List<TasksDTO> getTaskList(Integer id, Integer gid);
+    UserDTO createUser(UserDTO userDTO);
+
+    List<UserDTO> getAllUsers();
+
+    UserDTO getUserById(Integer id);
+
+    UserDTO updateUser(Integer id, UserDTO userDTO);
+
+    void deleteUser(Integer id);
 }
